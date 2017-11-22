@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import MostPopularReducer from './reducer_most_popular';
+import IndexPageReducer from './reducers_index_page';
 
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
-  mostPopular: MostPopularReducer,
+  indexPage: IndexPageReducer,
+  form: formReducer
 });
 
 export default rootReducer;

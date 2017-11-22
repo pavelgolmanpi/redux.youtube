@@ -6,8 +6,6 @@ export const FETCH_MOST_POPULAR_SUCCESS = 'FETCH_MOST_POPULAR_SUCCESS';
 export const FETCH_MOST_POPULAR_FAILURE = 'FETCH_MOST_POPULAR_FAILURE';
 export const RESET_MOST_POPULAR = 'RESET_MOST_POPULAR';
 
-
-
 const ROOT_URL = location.href.indexOf('localhost') > 0 ? 'http://localhost:3000/api' : '/api';
 export function fetchMostPopular() {
   const request = axios({

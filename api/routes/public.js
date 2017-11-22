@@ -19,4 +19,18 @@ router.get('/popular', function(req, res) {
     });
 });
 
+router.get('/search', function(req, res) {
+  const API_KEY = process.env.REDUX_YOUTUBE_SAMPLE_API_KEY;
+
+  const search = req.query.q;
+
+  axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&key=${API_KEY}&q=${search}`)
+    .then(function (response) {
+      return res.json(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+});
+
 module.exports = router;
