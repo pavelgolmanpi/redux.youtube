@@ -13,10 +13,14 @@ class VideoList extends Component {
 
     return popular.items.map((video) => {
       const thumbnail = video.snippet['thumbnails']['medium']['url'];
+      const videoID = typeof video.id === 'object' ? video.id.videoId : video.id;
+      
       return (
         <li className="list-group-item">
-          {video.snippet.title} <br />
-          <img src={thumbnail} />
+          <Link to={"video/" + videoID}>
+            {video.snippet.title} <br />
+            <img src={thumbnail} />
+          </Link>
         </li>
       );
     });

@@ -5,7 +5,7 @@ import { BrowserRouter, browserHistory, Route, IndexRoute, Switch } from 'react-
 import configureStore from './store/configureStore.js';
 
 import IndexPage from './pages/IndexPage';
-
+import VideoPage from './pages/VideoPage/VideoPage';
 
 const store = configureStore();
 
@@ -14,6 +14,7 @@ ReactDOM.render(
     <BrowserRouter history={browserHistory}>
       <Switch>
         <Route exact path="/" component={IndexPage} />
+        <Route path="/video/:id" component={VideoPage} />
       </Switch>
     </BrowserRouter>
   </Provider>
